@@ -14,7 +14,7 @@ A lightweight World of Warcraft addon that tracks gold across all your character
 
 1. Download or clone this repository:
    ```bash
-   git clone git@github.com:TheGraele/infobot-wow.git
+   git clone git@github.com:TheGraele/InfoBotWoW.git
    ```
 2. Copy (or symlink) the folder into your WoW addons directory and **rename it to `InfoBotWoW`**:
    ```
@@ -47,7 +47,7 @@ Auction data updates automatically whenever you open the Auction House.
 
 ## Requirements
 
-- World of Warcraft Retail (The War Within — patch 12.0.1+)
+- World of Warcraft Retail (Midnight — patch 12.0.1+)
 
 ## License
 
