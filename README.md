@@ -1,14 +1,54 @@
 # InfoBot WoW
 
-InfoBot for World of Warcraft.
+A lightweight World of Warcraft addon that tracks gold across all your characters, monitors session earnings, and keeps tabs on your active auctions.
 
-## Getting Started
+## Features
 
-```bash
-git clone git@github.com:TheGraele/infobot-wow.git
-cd infobot-wow
-```
+- **Account-Wide Gold Tracking** — See gold totals for every character on your account in one place, color-coded by class.
+- **Session Summary** — Tracks how much gold you've earned or spent since logging in.
+- **Auction House Tracking** — Automatically scans your active auctions when you visit the AH, showing item details, buyout prices, and color-coded time remaining.
+- **Mini Gold Tracker** — A small, draggable on-screen display showing your current gold. Click it to open the full InfoBot window.
+- **Slash Commands** — `/ibot` or `/infobot` to toggle the window, `/ibot reset` to reset your session baseline, `/ibot help` for usage info.
 
-## Development
+## Installation
 
-[Add setup and development instructions here]
+1. Download or clone this repository:
+   ```bash
+   git clone git@github.com:TheGraele/infobot-wow.git
+   ```
+2. Copy (or symlink) the folder into your WoW addons directory and **rename it to `InfoBotWoW`**:
+   ```
+   /Applications/World of Warcraft/_retail_/Interface/AddOns/InfoBotWoW/
+   ```
+   The folder name must match the `.toc` filename exactly.
+3. Restart WoW or return to the character select screen. The addon will appear in your AddOns list.
+
+## Usage
+
+| Command | Description |
+|---|---|
+| `/ibot` | Toggle the InfoBot window |
+| `/ibot help` | Show available commands |
+| `/ibot reset` | Reset session gold baseline to current gold |
+
+You can also click the mini gold tracker bar (top-right of screen) to toggle the window. The bar is draggable.
+
+Auction data updates automatically whenever you open the Auction House.
+
+## File Structure
+
+| File | Purpose |
+|---|---|
+| `InfoBotWoW.toc` | Addon manifest (interface version, saved variables) |
+| `Core.lua` | Addon initialization, event routing, shared utilities |
+| `GoldTracker.lua` | Per-character gold tracking, account-wide storage |
+| `AuctionTracker.lua` | Owned auction scanning and persistence |
+| `UI.lua` | Main display frame, mini tracker, slash commands |
+
+## Requirements
+
+- World of Warcraft Retail (The War Within — patch 12.0.1+)
+
+## License
+
+MIT
