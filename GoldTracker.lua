@@ -64,6 +64,7 @@ function GT:GetAllCharacters()
     local list = {}
     for key, data in pairs(InfoBotWoWDB.characters) do
         list[#list + 1] = { key = key, data = data }
+        print(string.format("|cff00ccff[InfoBot Debug]|r Character in DB: %s - Gold: %s", key, data.gold or "nil"))
     end
     table.sort(list, function(a, b)
         -- Current character first, then alphabetical.
