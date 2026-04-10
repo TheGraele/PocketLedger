@@ -122,4 +122,3 @@ function AT:OnLogout()
         auctionFrame = nil
     end
 end
-end
