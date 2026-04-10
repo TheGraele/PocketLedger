@@ -13,21 +13,17 @@ local function SaveCurrentGold()
     local name = UnitName("player")
     local realm = GetRealmName()
     local _, classFile = UnitClass("player")
-    local gold = GetMoney()
 
     local entry = InfoBotWoWDB.characters[key] or {}
     entry.name     = name
     entry.realm    = realm
     entry.class    = classFile
-    entry.gold     = gold
+    entry.gold     = GetMoney()
     entry.lastSeen = time()
     InfoBotWoWDB.characters[key] = entry
-
-    print(string.format("|cff00ccff[InfoBot Debug]|r Saved %s (%s): %dg", name, key, gold))
 end
 
 function GT:OnLogin()
-    print("|cff00ccff[InfoBot Debug]|r OnLogin called for " .. UnitName("player"))
     -- Snapshot session-start gold before any changes this session.
     InfoBotWoWChar.sessionStartGold = GetMoney()
 
@@ -47,12 +43,9 @@ end
 
 function GT:OnLogout()
     local gold = GetMoney()
-    print("|cff00ccff[InfoBot Debug]|r OnLogout called for " .. UnitName("player") .. " - GetMoney(): " .. gold)
     -- Only save if GetMoney() is valid (non-zero), since the character may be unloading.
     if gold > 0 then
         SaveCurrentGold()
-    else
-        print("|cffff4444[InfoBot Debug]|r Skipping save - GetMoney() returned 0")
     end
     if moneyFrame then
         moneyFrame:UnregisterAllEvents()
@@ -70,7 +63,6 @@ function GT:GetAllCharacters()
     local list = {}
     for key, data in pairs(InfoBotWoWDB.characters) do
         list[#list + 1] = { key = key, data = data }
-        print(string.format("|cff00ccff[InfoBot Debug]|r Character in DB: %s - Gold: %s", key, data.gold or "nil"))
     end
     table.sort(list, function(a, b)
         -- Current character first, then alphabetical.
