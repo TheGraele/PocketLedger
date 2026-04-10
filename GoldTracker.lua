@@ -46,8 +46,14 @@ function GT:OnLogin()
 end
 
 function GT:OnLogout()
-    print("|cff00ccff[InfoBot Debug]|r OnLogout called for " .. UnitName("player"))
-    SaveCurrentGold()
+    local gold = GetMoney()
+    print("|cff00ccff[InfoBot Debug]|r OnLogout called for " .. UnitName("player") .. " - GetMoney(): " .. gold)
+    -- Only save if GetMoney() is valid (non-zero), since the character may be unloading.
+    if gold > 0 then
+        SaveCurrentGold()
+    else
+        print("|cffff4444[InfoBot Debug]|r Skipping save - GetMoney() returned 0")
+    end
     if moneyFrame then
         moneyFrame:UnregisterAllEvents()
         moneyFrame = nil
