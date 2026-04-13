@@ -71,6 +71,20 @@ local function CreateMainFrame()
     closeBtn:SetPoint("TOPRIGHT", f, "TOPRIGHT", 2, 2)
     closeBtn:SetScript("OnClick", function() f:Hide() end)
 
+    -- Reset Bar button (re-centers the mini tracker)
+    local resetBarBtn = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
+    resetBarBtn:SetSize(80, 20)
+    resetBarBtn:SetPoint("TOPRIGHT", f, "TOPRIGHT", -90, -8)
+    resetBarBtn:SetText("Reset Bar")
+    resetBarBtn:SetScript("OnClick", function()
+        if UI.miniTracker then
+            UI.miniTracker:ClearAllPoints()
+            UI.miniTracker:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+            InfoBotWoWChar.miniTrackerPosition = nil
+            print("|cff00ccff[InfoBot]|r Mini tracker reset to center.")
+        end
+    end)
+
     -- Refresh button
     local refreshBtn = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
     refreshBtn:SetSize(70, 20)
