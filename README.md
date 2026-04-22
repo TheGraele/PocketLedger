@@ -14,7 +14,7 @@ A lightweight World of Warcraft addon that tracks gold across all your character
 
 1. Download or clone this repository:
    ```bash
-   git clone git@github.com:TheGraele/PocketLedger.git
+   git clone git@github.com:TheGraele/InfoBotWoW.git
    ```
 2. Copy (or symlink) the folder into your WoW addons directory and **rename it to `PocketLedger`**:
    ```
