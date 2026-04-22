@@ -6,6 +6,9 @@
 # Claude AI editor config
 .claude/
 
+# Editor config folders
+.vscode/
+
 # Editor artifacts
 *.swp
 *.swo
