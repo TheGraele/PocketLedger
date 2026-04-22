@@ -1,14 +1,15 @@
 # Pocket Ledger
 
-A lightweight World of Warcraft addon that tracks gold across all your characters, monitors session earnings, and keeps tabs on your active auctions.
+A lightweight World of Warcraft addon that tracks gold across all your characters, monitors session earnings, keeps tabs on your active auctions, and displays live stats — FPS, location coordinates, and XP with an ETA — on a draggable mini bar.
 
 ## Features
 
 - **Account-Wide Gold Tracking** — See gold totals for every character on your account in one place, color-coded by class.
 - **Session Summary** — Tracks how much gold you've earned or spent since logging in.
 - **Auction House Tracking** — Automatically scans your active auctions when you visit the AH, showing item details, buyout prices, and color-coded time remaining.
-- **Mini Gold Tracker** — A small, draggable on-screen display showing your current gold. Click it to open the full Pocket Ledger window.
-- **Slash Commands** — `/pl` or `/pocketledger` to toggle the window, `/pl reset` to reset your session baseline, `/pl help` for usage info.
+- **Mini Bar** — A small, draggable on-screen bar showing your current gold. Optionally displays FPS, current location + coordinates, and XP needed with an ETA. Click it to open the full Pocket Ledger window.
+- **Options Panel** — Full in-game options UI (via the WoW Settings menu or `/pl options`). Toggle individual sections, lock the mini bar, adjust bar scale, coordinate precision, and more.
+- **Slash Commands** — `/pl` or `/pocketledger` to toggle the window; see the command table below for all options.
 
 ## Installation
 
@@ -30,8 +31,11 @@ A lightweight World of Warcraft addon that tracks gold across all your character
 | `/pl` | Toggle the Pocket Ledger window |
 | `/pl help` | Show available commands |
 | `/pl reset` | Reset session gold baseline to current gold |
+| `/pl options` | Open the options panel |
+| `/pl defaults` | Reset all options to defaults |
+| `/pl diag` | Print DB diagnostics to chat |
 
-You can also click the mini gold tracker bar (top-right of screen) to toggle the window. The bar is draggable.
+You can also click the mini bar to toggle the window. The bar is draggable and can be locked in place via the options panel.
 
 Auction data updates automatically whenever you open the Auction House.
 

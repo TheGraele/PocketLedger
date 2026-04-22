@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude AI editor config
+.claude/
+
+# Editor artifacts
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.zip

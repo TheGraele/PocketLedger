@@ -2,7 +2,7 @@
 ## Title: Pocket Ledger
 ## Notes: Tracks gold across all characters, session gold changes, and active auctions.
 ## Author: Graele
-## Version: 0.1-alpha
+## Version: 1.0.0
 ## IconTexture: Interface\AddOns\PocketLedger\icon
 ## SavedVariables: PocketLedgerDB,PocketLedgerBackupDB
 ## SavedVariablesPerCharacter: PocketLedgerChar

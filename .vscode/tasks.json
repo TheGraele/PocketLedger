@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Deploy PocketLedger and reopen folder",
+			"type": "shell",
+			"command": "cp /Users/graele/PocketLedger/*.lua /Users/graele/PocketLedger/*.toc \"/Applications/World of Warcraft/_retail_/Interface/AddOns/PocketLedger/\" && code -r /Users/graele/PocketLedger"
+		},
+		{
+			"label": "Deploy PocketLedger",
+			"type": "shell",
+			"command": "cp /Users/graele/PocketLedger/*.lua /Users/graele/PocketLedger/*.toc \"/Applications/World of Warcraft/_retail_/Interface/AddOns/PocketLedger/\"",
+			"group": "build"
+		}
+	]
+}
