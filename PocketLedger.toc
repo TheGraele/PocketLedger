@@ -1,0 +1,13 @@
+## Interface: 120005
+## Title: Pocket Ledger
+## Notes: Tracks gold across all characters, session gold changes, and active auctions.
+## Author: Graele
+## Version: 0.1-alpha
+## IconTexture: Interface\AddOns\PocketLedger\icon
+## SavedVariables: PocketLedgerDB,InfoBotWoWDB
+## SavedVariablesPerCharacter: PocketLedgerChar,InfoBotWoWChar
+
+Core.lua
+GoldTracker.lua
+AuctionTracker.lua
+UI.lua

@@ -1,4 +1,4 @@
-# InfoBot WoW
+# Pocket Ledger
 
 A lightweight World of Warcraft addon that tracks gold across all your characters, monitors session earnings, and keeps tabs on your active auctions.
 
@@ -7,18 +7,18 @@ A lightweight World of Warcraft addon that tracks gold across all your character
 - **Account-Wide Gold Tracking** — See gold totals for every character on your account in one place, color-coded by class.
 - **Session Summary** — Tracks how much gold you've earned or spent since logging in.
 - **Auction House Tracking** — Automatically scans your active auctions when you visit the AH, showing item details, buyout prices, and color-coded time remaining.
-- **Mini Gold Tracker** — A small, draggable on-screen display showing your current gold. Click it to open the full InfoBot window.
+- **Mini Gold Tracker** — A small, draggable on-screen display showing your current gold. Click it to open the full Pocket Ledger window.
 - **Slash Commands** — `/ibot` or `/infobot` to toggle the window, `/ibot reset` to reset your session baseline, `/ibot help` for usage info.
 
 ## Installation
 
 1. Download or clone this repository:
    ```bash
-   git clone git@github.com:TheGraele/InfoBotWoW.git
+   git clone git@github.com:TheGraele/PocketLedger.git
    ```
-2. Copy (or symlink) the folder into your WoW addons directory and **rename it to `InfoBotWoW`**:
+2. Copy (or symlink) the folder into your WoW addons directory and **rename it to `PocketLedger`**:
    ```
-   /Applications/World of Warcraft/_retail_/Interface/AddOns/InfoBotWoW/
+   /Applications/World of Warcraft/_retail_/Interface/AddOns/PocketLedger/
    ```
    The folder name must match the `.toc` filename exactly.
 3. Restart WoW or return to the character select screen. The addon will appear in your AddOns list.
@@ -27,7 +27,7 @@ A lightweight World of Warcraft addon that tracks gold across all your character
 
 | Command | Description |
 |---|---|
-| `/ibot` | Toggle the InfoBot window |
+| `/ibot` | Toggle the Pocket Ledger window |
 | `/ibot help` | Show available commands |
 | `/ibot reset` | Reset session gold baseline to current gold |
 
@@ -39,7 +39,7 @@ Auction data updates automatically whenever you open the Auction House.
 
 | File | Purpose |
 |---|---|
-| `InfoBotWoW.toc` | Addon manifest (interface version, saved variables) |
+| `PocketLedger.toc` | Addon manifest (interface version, saved variables) |
 | `Core.lua` | Addon initialization, event routing, shared utilities |
 | `GoldTracker.lua` | Per-character gold tracking, account-wide storage |
 | `AuctionTracker.lua` | Owned auction scanning and persistence |
@@ -47,7 +47,7 @@ Auction data updates automatically whenever you open the Auction House.
 
 ## Requirements
 
-- World of Warcraft Retail (Midnight — patch 12.0.1+)
+- World of Warcraft Retail (Midnight — patch 12.0.5+)
 
 ## License
 

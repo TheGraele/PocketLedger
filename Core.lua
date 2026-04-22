@@ -30,21 +30,25 @@ frame:SetScript("OnEvent", function(_, event, arg1)
     if event == "ADDON_LOADED" then
         if arg1 ~= addonName then return end
 
+        -- Keep backward compatibility with older saved variable names.
+        PocketLedgerDB = PocketLedgerDB or InfoBotWoWDB or {}
+        PocketLedgerChar = PocketLedgerChar or InfoBotWoWChar or {}
+        InfoBotWoWDB = PocketLedgerDB
+        InfoBotWoWChar = PocketLedgerChar
+
         -- Initialize account-wide DB.
-        InfoBotWoWDB = InfoBotWoWDB or {}
-        InfoBotWoWDB.characters = InfoBotWoWDB.characters or {}
-        InfoBotWoWDB.auctions   = InfoBotWoWDB.auctions   or {}
+        PocketLedgerDB.characters = PocketLedgerDB.characters or {}
+        PocketLedgerDB.auctions   = PocketLedgerDB.auctions   or {}
 
         -- Initialize per-character DB.
-        InfoBotWoWChar = InfoBotWoWChar or {}
-        InfoBotWoWChar.sessionStartGold = InfoBotWoWChar.sessionStartGold or 0
+        PocketLedgerChar.sessionStartGold = PocketLedgerChar.sessionStartGold or 0
 
     elseif event == "PLAYER_LOGIN" then
         -- Character is fully loaded; safe to read GetMoney() and register modules.
         ns.GoldTracker:OnLogin()
         ns.AuctionTracker:OnLogin()
         ns.UI:OnLogin()
-        print("|cff00ccff[InfoBot]|r loaded. Type |cffffd700/ibot|r to open.")
+        print("|cff00ccff[Pocket Ledger]|r loaded. Type |cffffd700/ibot|r to open.")
 
     elseif event == "PLAYER_LOGOUT" then
         -- Save current gold before the session ends.
